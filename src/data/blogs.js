@@ -131,7 +131,7 @@ export const BLOGS = [
     'bp-cardio-heart-care', 'bp-cardio-capsules', 'Heart Care', 'Jul 29, 2026', '5 min read',
     'Ayurvedic capsules for cardiovascular strength and BP balance.',
     [
-      'The heart (hridaya) is described in Ayurveda as the root of circulation and emotion alike — strained by salt-heavy food, stress, poor sleep and sedentary days. SKDG BP & Cardio Capsules combine heart-toning (hridya) herbs that support cardiovascular strength and help maintain healthy blood pressure. They also support calm nerves, better sleep and balanced circulation day after day.',
+      'The heart (hridaya) is described in Ayurveda as the root of circulation and emotion alike — strained by salt-heavy food, stress, poor sleep and sedentary days. SKDG BP & Cardio Capsules combine heart-toning (hridya) herbs that support cardiovascular strength and help maintain healthy blood pressure. They also support calm nerves, better sleep and balanced circulation day after day, keeping the heart resilient under daily stress.',
       'The 30-capsule course supports smooth circulation, calms the vata-pitta restlessness behind pressure fluctuations, and provides antioxidant protection to blood vessels stressed by modern life.',
       'Capsules work hardest alongside heart-smart habits: 30 minutes of walking, less refined salt, timely meals, and conscious unwinding before bed. Those on BP medication should continue it and use this as supportive care under guidance.',
     ],
@@ -143,7 +143,7 @@ export const BLOGS = [
     'Neem-depth cleansing plus aloevera calm for clear, fresh skin.',
     [
       'Acne, excess oil and dullness begin with clogged pores and aggravated pitta — and this 100ml face wash answers both. Neem, Ayurveda\u2019s legendary blood-purifier, brings antibacterial depth-cleansing that helps control pimples at the source, while aloevera cools, hydrates and repairs the skin barrier.',
-      'The paraben-and-SLS-free formula suits all skin types, including sensitive and teenage skin, because it cleans without stripping natural moisture. Skin feels fresh, balanced and visibly clearer with every passing week. Twice-daily use keeps pores clear, shine balanced and complexion visibly fresher within weeks.',
+      'The paraben-and-SLS-free formula suits all skin types, including sensitive and teenage skin, because it cleans without stripping natural moisture. Skin feels fresh, balanced and visibly clearer with every passing week, revealing a naturally healthy, radiant glow. Twice-daily use keeps pores clear, shine balanced and complexion visibly fresher within weeks.',
       'For complete clarity, pair the outer cleanse with inner balance: plenty of water, less fried food, and Bhumi Amla Churan for gut-level detox that shows on the face.',
     ],
     ['Purifies skin & unclogs pores', 'Helps control acne & pimples', 'Paraben & SLS free, all skin types', 'Aloevera cools & repairs skin barrier'],
@@ -175,7 +175,7 @@ export const BLOGS = [
     'leco-protct-ds-wellness', 'leco-protct-ds-syrup', 'Women\u2019s Wellness', 'Jul 17, 2026', '5 min read',
     'A complete Ayurvedic health tonic crafted for women\u2019s wellness.',
     [
-      'Women\u2019s intimate health concerns — from leucorrhoea and irregular cycles to urinary discomfort — are spoken of too little and suffered too long. SKDG Leco Protct-DS Syrup is a classical-style complete health tonic formulated to support these needs with dignity and gentle herbal strength. Its nourishing herbs also build everyday strength, immunity and feminine vitality from within.',
+      'Women\u2019s intimate health concerns — from leucorrhoea and irregular cycles to urinary discomfort — are spoken of too little and suffered too long. SKDG Leco Protct-DS Syrup is a classical-style complete health tonic formulated to support these needs with dignity and gentle herbal strength. Its nourishing herbs also build everyday strength, immunity and feminine vitality from within, cycle after cycle.',
       'Its Ayurvedic botanicals traditionally help manage abnormal discharge, soothe irritation and itching, support urinary tract health and encourage menstrual regularity — while nourishing overall strength from within.',
       'Because intimate wellness connects deeply to stress, hygiene and hormonal rhythm, pair the tonic with timely meals, adequate hydration, gentle exercise and proper rest. Persistent symptoms deserve a doctor\u2019s evaluation alongside this supportive care.',
     ],
