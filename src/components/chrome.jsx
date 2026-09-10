@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 import { waLink, DEFAULT_WA_MSG } from '../data/site';
+import logoImg from '../assets/logo.png';
 
 export function Loader() {
   const [show, setShow] = useState(true);
@@ -14,16 +15,17 @@ export function Loader() {
       {show && (
         <motion.div exit={{ opacity: 0 }} className="fixed inset-0 z-[100] grid place-items-center bg-emerald-ink">
           <div className="text-center">
-            <motion.div
-              animate={{ scale: [0.92, 1.06, 0.92], rotate: [0, 4, -4, 0] }}
-              transition={{ duration: 1.4, repeat: Infinity }}
-              className="mx-auto w-20 h-20 grid place-items-center rounded-3xl bg-gradient-to-br from-emerald-deep to-emerald-dark border border-gold/50 shadow-[0_0_60px_-10px_#C8A44D]"
-            >
-              <span className="font-display text-4xl text-gold-light">S</span>
-            </motion.div>
-            <p className="font-display text-2xl text-ivory mt-5">SKDG <span className="text-gold-gradient">Ayurvedic</span></p>
-            <div className="mt-4 h-1 w-44 mx-auto rounded-full bg-white/10 overflow-hidden">
-              <motion.div className="h-full bg-gradient-to-r from-emerald-deep via-gold to-gold-light" initial={{ x: '-100%' }} animate={{ x: '100%' }} transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }} style={{ width: '60%' }} />
+            <motion.img
+              src={logoImg}
+              alt="SKDG Ayurvedic logo"
+              animate={{ scale: [0.95, 1.05, 0.95] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              className="mx-auto h-[70px] md:h-[90px] w-auto object-contain drop-shadow-[0_0_40px_rgba(200,164,77,0.5)]"
+            />
+            <p className="font-display text-2xl md:text-3xl text-ivory mt-5">SKDG <span className="text-gold-gradient">Ayurvedic</span></p>
+            <p className="text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-ivory/50 mt-1.5">Ancient • Modern • Pure</p>
+            <div className="mt-5 h-1 w-44 md:w-56 mx-auto rounded-full bg-white/10 overflow-hidden">
+              <motion.div className="h-full bg-gradient-to-r from-gold-dark via-gold to-gold-light" initial={{ x: '-100%' }} animate={{ x: '220%' }} transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }} style={{ width: '45%' }} />
             </div>
           </div>
         </motion.div>
