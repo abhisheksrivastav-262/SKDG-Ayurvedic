@@ -12,6 +12,7 @@ import Ingredients from './pages/Ingredients';
 import Testimonials from './pages/Testimonials';
 import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import { Privacy, Terms } from './pages/Legal';
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
