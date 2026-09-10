@@ -10,7 +10,7 @@ import { Reveal, SectionHeading, Stars } from '../components/ui';
 import ProductCard from '../components/ProductCard';
 import { IMAGES, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL, INSTAGRAM } from '../data/site';
 import { PRODUCTS } from '../data/products';
-import { INGREDIENTS, TESTIMONIALS } from '../data/content';
+import { TESTIMONIALS } from '../data/content';
 
 const TRUST = [
   { icon: Leaf, title: '100% Natural', desc: 'Farm-sourced botanicals' },
@@ -37,6 +37,15 @@ const STEP_DESC = [
   'Third-party lab testing for purity & safety.',
   'Hygienic, eco-conscious luxury packaging.',
   'Fast, tracked delivery to your doorstep.',
+];
+
+const HIGHLIGHTS = [
+  { id: 'skdg-gulkand-250g', desc: 'Traditional herbal rose preserve for digestive wellness.' },
+  { id: 'shainshah-gold-capsule', desc: 'Premium Ayurvedic vitality formulation.' },
+  { id: 'pancham-haldi', desc: 'High-quality turmeric blend for daily immunity.' },
+  { id: 'skdg-herbal-tea', desc: 'Herbal wellness tea for a refreshing lifestyle.' },
+  { id: 'liver-care-syrup', desc: 'Ayurvedic liver support formula.' },
+  { id: 'ortho-ds-capsules', desc: 'Herbal joint and bone wellness support.' },
 ];
 
 function Hero() {
@@ -200,22 +209,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ingredients */}
+      {/* Product Highlights */}
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
-        <SectionHeading eyebrow="Botanical Library" title={<>Nature's Finest <span className="italic text-gold-gradient">Ingredients</span></>} sub="Eight legendary herbs — traceable, potent and explained honestly." />
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {INGREDIENTS.map((g, i) => (
-            <Reveal key={g.name} delay={(i % 4) * 0.07}>
-              <Link to="/ingredients" className="lux-card group block bg-white rounded-[24px] overflow-hidden border border-emerald-deep/10">
-                <div className="h-44 overflow-hidden"><img src={g.image} alt={g.name} loading="lazy" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-1000" /></div>
-                <div className="p-5">
-                  <p className="text-[10px] tracking-[0.25em] uppercase text-gold-dark font-bold italic">{g.latin}</p>
-                  <h3 className="font-display text-xl text-emerald-ink">{g.name}</h3>
-                  <p className="text-[13px] text-ink/60 mt-1">{g.benefits[0]}</p>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+        <SectionHeading eyebrow="Product Highlights" title={<>SKDG Premium <span className="italic text-gold-gradient">Herbal Products</span></>} sub="Discover our authentic Ayurvedic formulations crafted for everyday wellness." />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {HIGHLIGHTS.map((h, i) => {
+            const p = PRODUCTS.find((x) => x.id === h.id);
+            if (!p) return null;
+            return (
+              <Reveal key={h.id} delay={(i % 3) * 0.08}>
+                <Link to={`/products/${p.id}`} className="lux-card group block bg-white rounded-[24px] overflow-hidden border border-emerald-deep/10">
+                  <div className="aspect-[4/5] overflow-hidden bg-gradient-to-b from-ivory to-cream/70 p-5">
+                    <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-contain" />
+                  </div>
+                  <div className="p-6">
+                    <p className="text-[10px] tracking-[0.25em] uppercase text-gold-dark font-bold">{p.category}</p>
+                    <h3 className="font-display text-[22px] text-emerald-ink mt-1">{p.name}</h3>
+                    <p className="text-sm text-ink/60 mt-1.5">{h.desc}</p>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-deep mt-3 group-hover:gap-3 transition-all">View Details <ArrowRight size={15} /></span>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 

@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { X, Expand } from 'lucide-react';
 import { Reveal, SectionHeading, PageHero } from '../components/ui';
 import { IMAGES } from '../data/site';
-import { GALLERY } from '../data/content';
+import { PRODUCTS } from '../data/products';
+
+const GALLERY = PRODUCTS.map((p) => ({ src: p.image, label: p.name, cat: p.category }));
 
 const CATS = ['All', ...new Set(GALLERY.map((g) => g.cat))];
 
@@ -26,7 +28,7 @@ export default function Gallery() {
           {list.map((g, i) => (
             <Reveal key={g.src + i} delay={(i % 3) * 0.05}>
               <button onClick={() => setLight(g)} className="group relative block w-full mb-4 rounded-3xl overflow-hidden border border-emerald-deep/10 text-left">
-                <img src={g.src} alt={g.label} loading="lazy" className="w-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ height: `${240 + ((i * 67) % 160)}px` }} />
+                <img src={g.src} alt={g.label} loading="lazy" className="w-full h-auto object-contain bg-ivory group-hover:scale-[1.03] transition-transform duration-700" />
                 <span className="absolute inset-0 bg-gradient-to-t from-emerald-ink/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all" />
                 <span className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all">
                   <span className="text-ivory font-display text-lg">{g.label}</span>
