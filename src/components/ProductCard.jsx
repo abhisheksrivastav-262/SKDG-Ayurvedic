@@ -14,9 +14,8 @@ export default function ProductCard({ product, index = 0 }) {
       transition={{ duration: 0.6, delay: (index % 4) * 0.08 }}
       className="lux-card group relative bg-white rounded-[26px] overflow-hidden border border-emerald-deep/10 shadow-[0_18px_45px_-20px_rgba(6,78,59,0.3)]"
     >
-      <div className="relative h-60 overflow-hidden">
-        <img src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-[1.2s] ease-out" />
-        <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/60 via-transparent to-transparent" />
+      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-ivory to-cream/70 p-4">
+        <img src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-contain" />
         {product.tag && (
           <span className="absolute top-4 left-4 inline-flex items-center gap-1 text-[11px] font-bold tracking-wide uppercase bg-gradient-to-r from-gold to-gold-dark text-emerald-ink px-3 py-1.5 rounded-full shadow-lg">
             <BadgeCheck size={12} /> {product.tag}
@@ -25,7 +24,7 @@ export default function ProductCard({ product, index = 0 }) {
         <span className="absolute top-4 right-4 text-[11px] font-bold bg-emerald-ink/80 text-gold-light px-2.5 py-1.5 rounded-full backdrop-blur border border-gold/30">
           -{discount}%
         </span>
-        <span className="absolute bottom-4 left-4 text-[11px] font-semibold tracking-widest uppercase text-ivory/90 bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20">
+        <span className="absolute bottom-4 left-4 text-[11px] font-semibold tracking-widest uppercase text-ivory bg-emerald-ink/70 backdrop-blur px-3 py-1.5 rounded-full border border-white/25">
           {product.category}
         </span>
       </div>

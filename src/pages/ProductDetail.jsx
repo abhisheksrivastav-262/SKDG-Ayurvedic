@@ -39,14 +39,14 @@ export default function ProductDetail() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 mt-6">
           <Reveal>
             <div className="lg:sticky lg:top-24">
-              <div className="relative rounded-[28px] overflow-hidden border border-emerald-deep/10 shadow-xl">
-                <img src={product.gallery[activeImg]} alt={product.name} className="h-[420px] md:h-[520px] w-full object-cover" />
+              <div className="relative rounded-[28px] overflow-hidden border border-emerald-deep/10 shadow-xl bg-gradient-to-b from-ivory to-cream/70 p-4 md:p-8">
+                <img src={product.gallery[activeImg]} alt={product.name} className="h-[380px] md:h-[480px] w-full object-contain" />
                 {product.tag && <span className="absolute top-5 left-5 text-[11px] font-bold uppercase tracking-wide bg-gradient-to-r from-gold to-gold-dark text-emerald-ink px-4 py-2 rounded-full shadow-lg">{product.tag}</span>}
               </div>
               <div className="grid grid-cols-3 gap-3 mt-3">
                 {product.gallery.map((g, i) => (
                   <button key={i} onClick={() => setActiveImg(i)} className={`rounded-2xl overflow-hidden border-2 transition-all ${i === activeImg ? 'border-gold shadow-lg' : 'border-transparent opacity-70 hover:opacity-100'}`}>
-                    <img src={g} alt="" loading="lazy" className="h-24 w-full object-cover" />
+                    <img src={g} alt="" loading="lazy" className="h-24 w-full object-contain bg-ivory p-2" />
                   </button>
                 ))}
               </div>
