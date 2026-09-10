@@ -36,8 +36,8 @@ export const CATEGORIES = [
 
 export const PRODUCTS = [
   {
-    id: 'skdg-gulkand', name: 'SKDG Gulkand', category: 'Daily Nutrition',
-    price: 349, mrp: 449, rating: 4.8, reviews: 1240,
+    id: 'skdg-gulkand-250g', name: 'SKDG Gulkand (250g)', category: 'Daily Nutrition',
+    price: 300, mrp: 399, rating: 4.8, reviews: 1240,
     image: A(F.gulkand), gallery: [A(F.gulkand)],
     tag: 'Bestseller',
     short: 'Pure rose-petal Gulkand for cooling, digestion & natural glow.',
@@ -48,8 +48,31 @@ export const PRODUCTS = [
     badge: '100% Natural',
   },
   {
+    id: 'skdg-gulkand-500g', name: 'SKDG Gulkand (500g)', category: 'Daily Nutrition',
+    price: 550, mrp: 699, rating: 4.8, reviews: 986,
+    image: A(F.gulkand), gallery: [A(F.gulkand)],
+    short: 'Pure rose-petal Gulkand for cooling, digestion & natural glow.',
+    benefits: ['Cools the body & fights heat', 'Boosts digestion', 'Calms stress & mind', 'Builds daily immunity'],
+    ingredients: 'Fresh rose petals, Mishri, Cardamom. 100% pure & natural.',
+    usage: '1–2 tsp daily after meals, or as directed.',
+    storage: 'Store in a cool, dry place. Use a dry spoon.',
+    badge: '100% Natural',
+  },
+  {
+    id: 'skdg-gulkand-1kg', name: 'SKDG Gulkand (1kg)', category: 'Daily Nutrition',
+    price: 1000, mrp: 1299, rating: 4.9, reviews: 754,
+    image: A(F.gulkand), gallery: [A(F.gulkand)],
+    tag: 'Family Pack',
+    short: 'Pure rose-petal Gulkand for cooling, digestion & natural glow.',
+    benefits: ['Cools the body & fights heat', 'Boosts digestion', 'Calms stress & mind', 'Builds daily immunity'],
+    ingredients: 'Fresh rose petals, Mishri, Cardamom. 100% pure & natural.',
+    usage: '1–2 tsp daily after meals, or as directed.',
+    storage: 'Store in a cool, dry place. Use a dry spoon.',
+    badge: '100% Natural',
+  },
+  {
     id: 'ortho-ds-capsules', name: 'SKDG Ortho DS Capsules', category: 'Herbal Capsules',
-    price: 549, mrp: 749, rating: 4.9, reviews: 2340,
+    price: 400, mrp: 499, rating: 4.9, reviews: 2340,
     image: A(F.orthoBottle), gallery: [A(F.orthoBottle), A(F.orthoBox)],
     tag: 'Bestseller',
     short: '30 Ayurvedic capsules for arthritis & joint pain relief.',
@@ -61,7 +84,7 @@ export const PRODUCTS = [
   },
   {
     id: 'ubtan-face-wash', name: 'SKDG Ubtan Face Wash', category: 'Daily Nutrition',
-    price: 249, mrp: 349, rating: 4.8, reviews: 2340,
+    price: 399, mrp: 499, rating: 4.8, reviews: 2340,
     image: A(F.ubtan), gallery: [A(F.ubtan)],
     tag: 'Bestseller',
     short: 'Turmeric, sandalwood & saffron wash that removes tan & illuminates skin.',
@@ -73,7 +96,7 @@ export const PRODUCTS = [
   },
   {
     id: 'shainshah-gold-capsule', name: 'Shainshah Gold Capsule', category: 'Herbal Capsules',
-    price: 899, mrp: 1299, rating: 4.9, reviews: 1890,
+    price: 2200, mrp: 2799, rating: 4.9, reviews: 1890,
     image: A(F.shainshah), gallery: [A(F.shainshah)],
     tag: 'Premium Gold',
     short: 'Shilajit, Kesar & Swarn Bhasma capsules for energy & stamina.',
@@ -85,7 +108,7 @@ export const PRODUCTS = [
   },
   {
     id: 'bhumi-amla-churan', name: 'Bhumi Amla Churan', category: 'Ayurvedic Powder',
-    price: 249, mrp: 349, rating: 4.8, reviews: 1670,
+    price: 599, mrp: 749, rating: 4.8, reviews: 1670,
     image: A(F.bhumi1), gallery: [A(F.bhumi1), A(F.bhumi2), A(F.bhumi3)],
     short: 'Classical 100g churan to cleanse, repair & regulate intestinal health.',
     benefits: ['Cleanses & repairs gut', 'Regulates intestinal health', 'Supports liver function', '100% pure & natural'],
@@ -96,7 +119,7 @@ export const PRODUCTS = [
   },
   {
     id: 'liver-care-syrup', name: 'Liver Care Syrup', category: 'Herbal Syrup',
-    price: 349, mrp: 469, rating: 4.8, reviews: 1420,
+    price: 299, mrp: 399, rating: 4.8, reviews: 1420,
     image: A(F.liverSyrup), gallery: [A(F.liverSyrup)],
     tag: 'Detox',
     short: 'Hepatoprotective liver tonic with enzyme benefits (225ml).',
@@ -107,7 +130,7 @@ export const PRODUCTS = [
   },
   {
     id: 'orthi-rlif-oil', name: 'Orthi Rlif Pain Relief Oil', category: 'Wellness Oil',
-    price: 449, mrp: 599, rating: 4.8, reviews: 1980,
+    price: 399, mrp: 499, rating: 4.8, reviews: 1980,
     image: A(F.orthiOil), gallery: [A(F.orthiOil)],
     tag: 'Pain Relief',
     short: 'Warming joint & muscle oil that strengthens bones in winter.',
@@ -118,7 +141,7 @@ export const PRODUCTS = [
   },
   {
     id: 'pancham-haldi', name: 'Pancham Haldi', category: 'Ayurvedic Powder',
-    price: 299, mrp: 399, rating: 4.9, reviews: 1560,
+    price: 1399, mrp: 1799, rating: 4.9, reviews: 1560,
     image: A(F.pancham), gallery: [A(F.pancham)],
     tag: 'Immunity Hero',
     short: 'Five-herb turmeric blend — good for inflammation & strong immunity.',
@@ -129,7 +152,7 @@ export const PRODUCTS = [
   },
   {
     id: 'neem-aloevera-face-wash', name: 'SKDG Neem Aloevera Face Wash', category: 'Daily Nutrition',
-    price: 199, mrp: 299, rating: 4.7, reviews: 2105,
+    price: 399, mrp: 499, rating: 4.7, reviews: 2105,
     image: A(F.neemFw), gallery: [A(F.neemFw)],
     short: 'Neem + Aloevera daily wash that purifies skin & controls acne.',
     benefits: ['Purifies skin deeply', 'Controls acne & pimples', 'Paraben & SLS free', 'Suits all skin types'],
@@ -139,7 +162,7 @@ export const PRODUCTS = [
   },
   {
     id: 'diabetes-care-gold-churan', name: 'Diabetes Care Gold Churan', category: 'Ayurvedic Powder',
-    price: 399, mrp: 549, rating: 4.7, reviews: 980,
+    price: 599, mrp: 749, rating: 4.7, reviews: 980,
     image: A(F.diabetes), gallery: [A(F.diabetes)],
     tag: 'New',
     short: 'Herbal 100g churan to support healthy sugar balance naturally.',
@@ -150,7 +173,7 @@ export const PRODUCTS = [
   },
   {
     id: 'leco-protct-ds-syrup', name: 'SKDG Leco Protct-DS Syrup', category: 'Herbal Syrup',
-    price: 329, mrp: 449, rating: 4.7, reviews: 760,
+    price: 400, mrp: 499, rating: 4.7, reviews: 760,
     image: A(F.leco), gallery: [A(F.leco)],
     short: 'Complete health tonic for women’s intimate & hormonal wellness.',
     benefits: ['Supports leucorrhoea care', 'Helps urinary tract health', 'Supports regular menstruation', 'Complete women’s health tonic'],
@@ -160,7 +183,7 @@ export const PRODUCTS = [
   },
   {
     id: 'skdg-herbal-tea', name: 'SKDG Herbal Tea', category: 'Immunity Care',
-    price: 299, mrp: 399, rating: 4.8, reviews: 1130,
+    price: 399, mrp: 499, rating: 4.8, reviews: 1130,
     image: A(F.herbalTea), gallery: [A(F.herbalTea)],
     short: 'Heart-friendly herbal tea that boosts metabolism & digestion.',
     benefits: ['Boosts metabolism', 'Protects heart health', 'Improves digestion', 'Daily antioxidant ritual'],
@@ -170,7 +193,7 @@ export const PRODUCTS = [
   },
   {
     id: 'liver-care-powder', name: 'Liver Care Powder', category: 'Ayurvedic Powder',
-    price: 279, mrp: 379, rating: 4.7, reviews: 890,
+    price: 399, mrp: 499, rating: 4.7, reviews: 890,
     image: A(F.liverPowder), gallery: [A(F.liverPowder)],
     short: 'Daily 100g powder for liver, bowel & digestive health.',
     benefits: ['Supports liver & sluggish liver', 'Eliminates toxins', 'Regulates bowel habits', 'Improves appetite & digestion'],
@@ -180,7 +203,7 @@ export const PRODUCTS = [
   },
   {
     id: 'bp-cardio-capsules', name: 'SKDG BP & Cardio Capsules', category: 'Herbal Capsules',
-    price: 599, mrp: 799, rating: 4.8, reviews: 1210,
+    price: 400, mrp: 499, rating: 4.8, reviews: 1210,
     image: A(F.bpCardio), gallery: [A(F.bpCardio)],
     tag: 'New',
     short: '30 capsules for cardiovascular support & healthy blood pressure.',
@@ -191,7 +214,7 @@ export const PRODUCTS = [
   },
   {
     id: 'charcoal-face-wash', name: 'SKDG Charcoal Face Wash', category: 'Daily Nutrition',
-    price: 199, mrp: 299, rating: 4.7, reviews: 1780,
+    price: 199, mrp: 249, rating: 4.7, reviews: 1780,
     image: A(F.charcoal), gallery: [A(F.charcoal)],
     short: 'Activated charcoal wash for oil control & soft, glowing skin.',
     benefits: ['Controls oil & acne', 'Deep-cleanses pores', 'Soft, silky & glowing complexion', 'For all skin types'],
