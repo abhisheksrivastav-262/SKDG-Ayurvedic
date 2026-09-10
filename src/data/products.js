@@ -1,25 +1,22 @@
 import { IMAGES } from './site';
 
 // Real SKDG product photos from src/assets/a/
-const aImgs = import.meta.glob('../assets/a/*.jpeg', { eager: true, query: '?url', import: 'default' });
+const aImgs = import.meta.glob('../assets/a/*.{jpeg,jpg,png}', { eager: true, query: '?url', import: 'default' });
 const A = (file) => aImgs[`../assets/a/${file}`];
 
 const F = {
   gulkand: 'WhatsApp Image 2026-09-10 at 13.19.09.jpeg',
-  neemFw: 'WhatsApp Image 2026-09-10 at 13.19.10.jpeg',
-  bhumi1: 'WhatsApp Image 2026-09-10 at 13.19.10 (1).jpeg',
-  diabetes: 'WhatsApp Image 2026-09-10 at 13.19.11.jpeg',
-  orthoBottle: 'WhatsApp Image 2026-09-10 at 13.19.11 (1).jpeg',
-  shainshah: 'WhatsApp Image 2026-09-10 at 13.19.11 (2).jpeg',
+  neemFw: 'skdg-neem-aloevera-face-wash.jpg',
+  bhumi: 'bhumi-amla-churan.jpg',
+  diabetes: 'diabetes-care-gold-churan.jpg',
+  ortho: 'skdg-ortho-ds-capsules.jpg',
+  shainshah: 'shainshah-gold-capsule.jpg',
   leco: 'WhatsApp Image 2026-09-10 at 13.19.13.jpeg',
-  bhumi2: 'WhatsApp Image 2026-09-10 at 13.19.14.jpeg',
-  orthoBox: 'WhatsApp Image 2026-09-10 at 13.19.14 (1).jpeg',
-  herbalTea: 'WhatsApp Image 2026-09-10 at 13.19.15.jpeg',
-  liverSyrup: 'WhatsApp Image 2026-09-10 at 13.19.15 (1).jpeg',
-  orthiOil: 'WhatsApp Image 2026-09-10 at 13.19.16.jpeg',
-  pancham: 'WhatsApp Image 2026-09-10 at 13.19.16 (1).jpeg',
+  herbalTea: 'skdg-herbal-tea.jpg',
+  liverSyrup: 'liver-care-syrup.jpg',
+  orthiOil: 'orthi-rlif-pain-relief-oil.jpg',
+  pancham: 'pancham-haldi.jpg',
   liverPowder: 'WhatsApp Image 2026-09-10 at 13.19.17.jpeg',
-  bhumi3: 'WhatsApp Image 2026-09-10 at 13.19.17 (1).jpeg',
   bpCardio: 'WhatsApp Image 2026-09-10 at 13.19.18.jpeg',
   ubtan: 'WhatsApp Image 2026-09-10 at 13.19.18 (1).jpeg',
   charcoal: 'WhatsApp Image 2026-09-10 at 13.19.19.jpeg',
@@ -73,7 +70,7 @@ export const PRODUCTS = [
   {
     id: 'ortho-ds-capsules', name: 'SKDG Ortho DS Capsules', category: 'Herbal Capsules',
     price: 400, mrp: 499, rating: 4.9, reviews: 2340,
-    image: A(F.orthoBottle), gallery: [A(F.orthoBottle), A(F.orthoBox)],
+    image: A(F.ortho), gallery: [A(F.ortho)],
     tag: 'Bestseller',
     short: '30 Ayurvedic capsules for arthritis & joint pain relief.',
     benefits: ['Relieves arthritis pain', 'Eases joint pain & stiffness', 'Supports mobility', '100% Ayurvedic formula'],
@@ -109,7 +106,7 @@ export const PRODUCTS = [
   {
     id: 'bhumi-amla-churan', name: 'Bhumi Amla Churan', category: 'Ayurvedic Powder',
     price: 599, mrp: 749, rating: 4.8, reviews: 1670,
-    image: A(F.bhumi1), gallery: [A(F.bhumi1), A(F.bhumi2), A(F.bhumi3)],
+    image: A(F.bhumi), gallery: [A(F.bhumi)],
     short: 'Classical 100g churan to cleanse, repair & regulate intestinal health.',
     benefits: ['Cleanses & repairs gut', 'Regulates intestinal health', 'Supports liver function', '100% pure & natural'],
     ingredients: 'Bhumi Amla & supporting Ayurvedic herbs. 100g pack.',
