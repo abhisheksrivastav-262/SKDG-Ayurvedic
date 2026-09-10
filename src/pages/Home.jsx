@@ -9,7 +9,7 @@ import { InstagramIcon } from '../components/icons';
 import { Reveal, SectionHeading, Stars } from '../components/ui';
 import ProductCard from '../components/ProductCard';
 import { IMAGES, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL, INSTAGRAM } from '../data/site';
-import { PRODUCTS, CATEGORIES } from '../data/products';
+import { PRODUCTS } from '../data/products';
 import { INGREDIENTS, TESTIMONIALS } from '../data/content';
 
 const TRUST = [
@@ -150,27 +150,6 @@ export default function Home() {
               <span className="w-11 h-11 grid place-items-center rounded-xl bg-gradient-to-br from-emerald-deep to-emerald-dark text-gold-light shrink-0"><t.icon size={20} /></span>
               <span><b className="block text-emerald-ink text-[15px]">{t.title}</b><small className="text-ink/55">{t.desc}</small></span>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
-        <SectionHeading eyebrow="Curated Rituals" title={<>Shop by <span className="italic text-gold-gradient">Wellness Need</span></>} sub="Six signature collections — each crafted as a complete daily ritual, not just a product." />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CATEGORIES.map((c, i) => (
-            <Reveal key={c.name} delay={(i % 3) * 0.08}>
-              <Link to="/products" className="lux-card group relative block rounded-[28px] overflow-hidden h-72 border border-emerald-deep/10">
-                <img src={c.image} alt={c.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-[1.4s]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/90 via-emerald-ink/30 to-transparent" />
-                <div className="absolute bottom-0 p-6 w-full">
-                  <p className="text-gold-light text-[10px] tracking-[0.3em] uppercase font-bold">Collection 0{i + 1}</p>
-                  <h3 className="font-display text-2xl text-ivory mt-1">{c.name}</h3>
-                  <p className="text-ivory/70 text-sm mt-1">{c.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-gold-light text-sm font-semibold mt-3 group-hover:gap-3 transition-all">Explore <ArrowRight size={15} /></span>
-                </div>
-              </Link>
-            </Reveal>
           ))}
         </div>
       </section>
