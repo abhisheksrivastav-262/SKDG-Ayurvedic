@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle, Phone } from 'lucide-react';
 import { InstagramIcon } from './icons';
 import { PHONE, waLink, DEFAULT_WA_MSG } from '../data/site';
+import logoImg from '../assets/logo.png';
 
 const LINKS = [
   { to: '/', label: 'Home' },
@@ -37,11 +38,8 @@ export default function Navbar() {
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${solid ? 'glass shadow-[0_10px_40px_-15px_rgba(6,78,59,0.35)] border-b border-emerald-deep/10' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="flex items-center justify-between h-[72px]">
-          <Link to="/" className="flex items-center gap-3 group">
-            <span className="relative grid place-items-center w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-deep to-emerald-dark shadow-lg shadow-emerald-dark/30 group-hover:rotate-6 transition-transform">
-              <span className="font-display text-2xl text-gold-light leading-none">S</span>
-              <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gold border-2 border-ivory" />
-            </span>
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
+            <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-10 md:h-[52px] w-auto object-contain drop-shadow-[0_4px_14px_rgba(6,78,59,0.35)] group-hover:scale-105 transition-transform" />
             <span className="leading-tight">
               <span className={`block font-display text-xl font-semibold tracking-wide ${solid ? 'text-emerald-ink' : 'text-ivory'}`}>SKDG <span className="text-gold-gradient">Ayurvedic</span></span>
               <span className={`block text-[10px] tracking-[0.32em] uppercase ${solid ? 'text-emerald-deep/70' : 'text-ivory/70'}`}>Ancient • Modern • Pure</span>

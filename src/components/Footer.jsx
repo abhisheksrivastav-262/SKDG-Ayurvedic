@@ -3,6 +3,7 @@ import { MessageCircle, Phone, MapPin, Clock, Leaf, ArrowUpRight } from 'lucide-
 import { InstagramIcon } from './icons';
 import { PHONE, INSTAGRAM, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL } from '../data/site';
 import { PRODUCTS } from '../data/products';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -12,9 +13,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-deep to-emerald-dark border border-gold/40 shadow-lg">
-                <span className="font-display text-2xl text-gold-light">S</span>
-              </span>
+              <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-12 md:h-[60px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(200,164,77,0.3)]" />
               <div>
                 <p className="font-display text-2xl">SKDG <span className="text-gold-gradient">Ayurvedic</span></p>
                 <p className="text-[10px] tracking-[0.32em] uppercase text-ivory/60">Ancient • Modern • Pure</p>
