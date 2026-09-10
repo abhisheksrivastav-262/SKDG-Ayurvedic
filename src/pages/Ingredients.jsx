@@ -1,59 +1,78 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, FlaskConical, History, Sparkles } from 'lucide-react';
+import { ArrowRight, Leaf, HeartHandshake, ClipboardList } from 'lucide-react';
 import { Reveal, SectionHeading, PageHero } from '../components/ui';
-import { IMAGES } from '../data/site';
-import { INGREDIENTS } from '../data/content';
+import { PRODUCTS, getProduct } from '../data/products';
+
+const INFO = {
+  'skdg-gulkand-250g': { type: 'Herbal Preserve', keys: 'Rose Petals, Mishri, Cardamom' },
+  'ortho-ds-capsules': { type: 'Capsule', keys: 'Shallaki, Nirgundi, Ashwagandha, Guggul' },
+  'ubtan-face-wash': { type: 'Face Wash', keys: 'Turmeric, Sandalwood, Saffron' },
+  'shainshah-gold-capsule': { type: 'Capsule', keys: 'Shilajit, Kesar, Swarn Bhasma' },
+  'bhumi-amla-churan': { type: 'Churan', keys: 'Bhumi Amla, Triphala Herbs' },
+  'liver-care-syrup': { type: 'Syrup', keys: 'Kalmegh, Bhumi Amla, Kutki, Punarnava' },
+  'orthi-rlif-oil': { type: 'Oil', keys: 'Sesame Oil, Nirgundi, Ashwagandha, Camphor' },
+  'pancham-haldi': { type: 'Churan', keys: 'Turmeric, Ginger, Black Pepper, Amla' },
+  'neem-aloevera-face-wash': { type: 'Face Wash', keys: 'Neem, Aloevera' },
+  'diabetes-care-gold-churan': { type: 'Churan', keys: 'Gurmar, Jamun, Methi, Karela' },
+  'leco-protct-ds-syrup': { type: 'Syrup', keys: 'Ashoka, Lodhra, Shatavari' },
+  'skdg-herbal-tea': { type: 'Herbal Tea', keys: 'Tulsi, Giloy, Ginger, Cinnamon, Black Pepper' },
+  'liver-care-powder': { type: 'Churan', keys: 'Kalmegh, Bhumi Amla, Kutki' },
+  'bp-cardio-capsules': { type: 'Capsule', keys: 'Arjuna, Garlic, Ashwagandha' },
+  'charcoal-face-wash': { type: 'Face Wash', keys: 'Activated Charcoal, Aloevera, Tea Tree' },
+};
+
+const ORDER = Object.keys(INFO);
+const heroProduct = getProduct('skdg-gulkand-250g');
 
 export default function Ingredients() {
   return (
     <main>
-      <PageHero eyebrow="Botanical Library" title={<>Eight Legendary <span className="italic text-gold-gradient">Herbs</span></>} sub="Ayurvedic names, Latin science, traditional uses and modern rituals — honestly explained." image={IMAGES.spices} />
+      <PageHero eyebrow="Know Your Formulation" title={<>SKDG Herbal <span className="italic text-gold-gradient">Product Information</span></>} sub="Explore the ingredients, benefits, and usage of our premium Ayurvedic formulations." image={heroProduct.image} />
 
-      <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20 space-y-10">
-        {INGREDIENTS.map((g, i) => (
-          <Reveal key={g.name}>
-            <article className={`grid lg:grid-cols-2 gap-0 rounded-[32px] overflow-hidden border border-emerald-deep/10 bg-white shadow-[0_25px_60px_-25px_rgba(6,78,59,0.35)] ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-              <div className="relative h-80 lg:h-auto min-h-[320px]">
-                <img src={g.image} alt={g.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/70 to-transparent lg:bg-gradient-to-r" />
-                <span className="absolute top-5 left-5 text-[11px] font-bold tracking-[0.25em] uppercase bg-ivory/90 text-emerald-deep px-4 py-2 rounded-full backdrop-blur">Herb 0{i + 1}</span>
-                <div className="absolute bottom-5 left-5 right-5">
-                  <p className="text-gold-light italic font-display text-lg">{g.latin}</p>
-                  <h2 className="font-display text-4xl text-ivory">{g.name}</h2>
-                  <p className="text-ivory/75 text-sm">{g.ayurvedic}</p>
-                </div>
-              </div>
-              <div className="p-8 md:p-12">
-                <div className="flex flex-wrap gap-2">
-                  {g.benefits.map((b) => (
-                    <span key={b} className="text-xs font-semibold bg-emerald-deep/10 text-emerald-deep border border-emerald-deep/15 px-3.5 py-2 rounded-full">{b}</span>
-                  ))}
-                </div>
-                <div className="mt-6 space-y-5">
-                  <div className="flex gap-3.5">
-                    <span className="w-10 h-10 grid place-items-center rounded-xl bg-gold/20 text-gold-dark shrink-0"><History size={18} /></span>
-                    <div><b className="font-display text-lg text-emerald-ink">Traditional Use</b><p className="text-ink/60 text-[15px] mt-1 leading-relaxed">{g.traditional}</p></div>
+      <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20">
+        <SectionHeading eyebrow="Transparency First" title={<>Every Product, <span className="italic text-gold-gradient">Explained Honestly</span></>} sub="Real images, real ingredients, moderate claims — exactly as Ayurvedic labelling guidance recommends." />
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 -mt-2">
+          {ORDER.map((id, i) => {
+            const p = getProduct(id);
+            if (!p) return null;
+            const info = INFO[id];
+            return (
+              <Reveal key={id} delay={(i % 3) * 0.07}>
+                <article className="lux-card glass border border-emerald-deep/10 rounded-[28px] overflow-hidden h-full flex flex-col shadow-[0_20px_50px_-25px_rgba(6,78,59,0.35)]">
+                  <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-ivory to-cream/70 p-6">
+                    <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-contain" />
+                    <span className="absolute top-4 left-4 text-[10px] font-bold tracking-[0.22em] uppercase bg-emerald-deep text-gold-light px-3.5 py-2 rounded-full shadow">{info.type}</span>
                   </div>
-                  <div className="flex gap-3.5">
-                    <span className="w-10 h-10 grid place-items-center rounded-xl bg-emerald-deep/10 text-emerald-deep shrink-0"><FlaskConical size={18} /></span>
-                    <div><b className="font-display text-lg text-emerald-ink">Modern Wellness</b><p className="text-ink/60 text-[15px] mt-1 leading-relaxed">{g.modern}</p></div>
+                  <div className="p-6 md:p-7 flex flex-col flex-1">
+                    <h2 className="font-display text-2xl text-emerald-ink leading-snug">{p.name}</h2>
+                    <div className="flex gap-2.5 mt-4">
+                      <span className="w-9 h-9 grid place-items-center rounded-xl bg-emerald-deep/10 text-emerald-deep shrink-0"><Leaf size={16} /></span>
+                      <p className="text-sm text-ink/70"><b className="text-emerald-ink">Key Ingredients: </b>{info.keys}</p>
+                    </div>
+                    <div className="flex gap-2.5 mt-3.5">
+                      <span className="w-9 h-9 grid place-items-center rounded-xl bg-gold/20 text-gold-dark shrink-0"><HeartHandshake size={16} /></span>
+                      <p className="text-sm text-ink/70"><b className="text-emerald-ink">Benefits: </b>{p.benefits.slice(0, 3).join(', ').toLowerCase().replace(/^./, (c) => c.toUpperCase())}.</p>
+                    </div>
+                    <div className="flex gap-2.5 mt-3.5">
+                      <span className="w-9 h-9 grid place-items-center rounded-xl bg-emerald-deep/10 text-emerald-deep shrink-0"><ClipboardList size={16} /></span>
+                      <p className="text-sm text-ink/70"><b className="text-emerald-ink">Usage: </b>{p.usage}</p>
+                    </div>
+                    <div className="mt-auto pt-5">
+                      <Link to={`/products/${p.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-emerald-deep border-t border-emerald-deep/10 w-full pt-4 hover:gap-3.5 transition-all">
+                        View Product — ₹{p.price} <ArrowRight size={15} />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                <Link to="/products" className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-emerald-deep border-b-2 border-gold pb-1 hover:gap-3.5 transition-all">Shop {g.name} formulations <ArrowRight size={15} /></Link>
-              </div>
-            </article>
-          </Reveal>
-        ))}
-      </section>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
 
-      <section className="max-w-7xl mx-auto px-5 md:px-8 pb-20">
         <Reveal>
-          <div className="relative rounded-[32px] overflow-hidden bg-emerald-ink p-10 md:p-14 text-center">
-            <Sparkles size={28} className="mx-auto text-gold" />
-            <h2 className="font-display text-3xl md:text-4xl text-ivory mt-4">Every herb traceable. <span className="italic text-gold-gradient">Every batch tested.</span></h2>
-            <p className="text-ivory/65 mt-3 max-w-xl mx-auto">Ask us where your bottle's herbs grew — we love answering that.</p>
-            <Link to="/products" className="btn-shine inline-flex items-center gap-2 mt-7 bg-gradient-to-r from-gold to-gold-dark text-emerald-ink font-bold px-8 py-3.5 rounded-full">Shop the Collection <ArrowRight size={17} /></Link>
-          </div>
+          <p className="text-center text-xs text-ink/45 max-w-2xl mx-auto mt-12 leading-relaxed">
+            Information only — these traditional formulations support everyday wellness and are not intended to diagnose, treat or cure any disease. Pregnant or medicated users should consult a physician first.
+          </p>
         </Reveal>
       </section>
     </main>
