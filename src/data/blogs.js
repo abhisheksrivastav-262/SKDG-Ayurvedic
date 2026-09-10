@@ -182,6 +182,94 @@ export const BLOGS = [
     ['Supports leucorrhoea & discharge care', 'Helps urinary tract comfort', 'Encourages menstrual regularity', 'Nourishes overall women\u2019s strength'],
     'Take 10ml twice daily after meals, or as directed. Shake well before use.'
   ),
+  make(
+    'st-care-capsules-immunity', 'st-care-capsules', 'Immunity', 'Sep 11, 2026', '4 min read',
+    'Natural herbal capsules for better health and stronger everyday immunity.',
+    [
+      'S-T-CARE Capsules are SKDG\u2019s everyday immunity formula, blending classical immune-supporting herbs into a simple twice-daily capsule. In Ayurveda, strong immunity (ojas) is built slowly through balanced digestion, clean channels and daily herbal nourishment — exactly what this 100% natural herbal formula is designed to support.',
+      'Regular use traditionally helps the body fight seasonal infections, steadies daily energy and vitality, and keeps digestion comfortable — because Ayurveda teaches that immunity begins in the gut. It suits students, working adults and elders facing pollution, travel and changing seasons.',
+      'Pair the capsules with warm water, timely meals and proper sleep for the best results. Those on medication or with chronic illness should consult their doctor first, using this as supportive daily care.',
+    ],
+    ['Boosts everyday immunity', 'Helps fight seasonal infections', 'Improves energy & vitality', 'Supports digestive health'],
+    'Take 1–2 capsules twice daily after meals with warm water.'
+  ),
+  make(
+    'bp-cardio-60-heart-care', 'bp-cardio-capsules-60', 'Heart Care', 'Sep 11, 2026', '5 min read',
+    'A 60-capsule Ayurvedic course for cardiovascular strength and BP balance.',
+    [
+      'The heart works every second of our lives, yet modern food, stress and sedentary days strain it constantly. SKDG BP & Cardio Capsules in the 60-capsule pack give a full month-plus course of heart-toning Ayurvedic herbs that support cardiovascular strength and help maintain healthy blood pressure.',
+      'Its botanicals traditionally support smooth circulation, calm the restlessness behind pressure fluctuations and provide antioxidant care to blood vessels. The larger pack suits committed long courses, since Ayurvedic heart care builds protection over weeks of consistent use.',
+      'Combine the course with daily walking, less refined salt and timely sleep. Those on BP medication must continue it and use these capsules only as supportive care under their doctor\u2019s guidance.',
+    ],
+    ['Supports cardiovascular strength', 'Helps maintain healthy blood pressure', 'Improves blood circulation', '60-capsule value course'],
+    'Take 1–2 capsules twice daily after meals with water. Continue prescribed medication alongside.'
+  ),
+  make(
+    'fem-protect-syrup-wellness', 'fem-protect-syrup', 'Women\u2019s Wellness', 'Sep 11, 2026', '5 min read',
+    'Complete herbal syrup care for women\u2019s health and hormonal balance.',
+    [
+      'Hormonal ups and downs touch every part of a woman\u2019s life — energy, skin, hair, mood and monthly comfort. Lecoprotect DS Syrup is a complete-care herbal tonic crafted for women\u2019s health, using classically trusted women\u2019s herbs that gently support hormonal balance from within.',
+      'Its nourishing botanicals traditionally boost everyday immunity, improve skin and hair health, enhance digestion and provide vital nutrients that busy routines often miss. The result is steadier energy and confidence through the month, cycle after cycle.',
+      'Pair the syrup with iron-rich meals, adequate hydration, gentle exercise and proper rest. Persistent symptoms deserve a doctor\u2019s evaluation alongside this supportive herbal care.',
+    ],
+    ['Supports hormonal balance', 'Boosts everyday immunity', 'Improves skin & hair health', 'Enhances digestion'],
+    'Take 10ml twice daily after meals, or as directed. Shake well before use.'
+  ),
+  make(
+    'liver-care-200ml-detox', 'liver-care-syrup-200ml', 'Liver Care', 'Sep 11, 2026', '4 min read',
+    'A compact 200ml liver detox syrup for daily liver protection.',
+    [
+      'Rich food, late nights and pollution keep the liver overloaded, and a sluggish liver shows up as heaviness, dull skin and poor digestion. This 200ml 4G Malticare packs the same hepatoprotective herbal wisdom in a compact bottle — ideal for trying a first liver course or carrying while travelling.',
+      'Its herbs traditionally detoxify the liver naturally, protect liver cells from everyday damage, improve digestion and boost immunity. The compact pack makes a gentle 2–3 week reset course simple to complete.',
+      'For a deeper reset, pair the syrup with light timely meals and limited alcohol. Shake well before use and store away from direct sunlight.',
+    ],
+    ['Detoxifies liver naturally', 'Protects liver cells', 'Improves digestion', 'Boosts immunity'],
+    'Take 10ml twice daily after meals, or as directed. Shake well before use.'
+  ),
+  make(
+    'punernava-makoye-liver-tonic', 'punernava-makoye-tonic', 'Liver Care', 'Sep 11, 2026', '5 min read',
+    'Punernava and Makoye — the classical duo for liver and digestion.',
+    [
+      'Punernava (Boerhavia diffusa) is Ayurveda\u2019s celebrated liver-and-kidney herb, and Makoye (black nightshade) has cooled and cleansed the liver in folk tradition for centuries. Together in this 500ml family tonic, they form a classical-style liver formula for healthy liver function and better digestion.',
+      'The tonic traditionally improves liver function, boosts digestion, detoxifies and cleanses accumulated waste, and restores lost appetite — covering the full spectrum of sluggish-liver complaints from heaviness to irregular bowels. The large bottle suits whole-family courses.',
+      'Take it consistently after meals with light, timely food for 8–12 weeks. Those with diagnosed liver disease should use it alongside, not instead of, their doctor\u2019s treatment.',
+    ],
+    ['Improves liver function', 'Boosts digestion & appetite', 'Detoxifies & cleanses', '500ml family pack'],
+    'Take 10–15ml twice daily after meals, or as directed. Shake well before use.'
+  ),
+  make(
+    'st-care-syrup-digestion', 'st-care-syrup', 'Digestion', 'Sep 11, 2026', '4 min read',
+    'Ayurvedic syrup for better digestion and a stronger gut-immunity link.',
+    [
+      'Gas, heaviness after meals and irregular bowels signal weak digestive fire (agni) — and weak agni means weak immunity, since Ayurveda links the two directly. S-T-CARE Syrup is crafted for better digestion and stronger immunity in one tasty twice-daily dose the whole family can take.',
+      'Its digestive herbs traditionally improve digestion, relieve common stomach issues, maintain everyday gut health and thereby boost immunity from the root. It suits children and elders alike as a gentle daily gut regulator.',
+      'Pair the syrup with warm water, chewing food slowly and avoiding late-night heavy meals. Persistent digestive complaints should be evaluated by a doctor.',
+    ],
+    ['Improves everyday digestion', 'Boosts immunity via gut health', 'Relieves stomach issues', 'Maintains gut health'],
+    'Take 10ml twice daily after meals, or as directed. Shake well before use.'
+  ),
+  make(
+    'monislex-syrup-appetite', 'monislex-syrup', 'Digestion', 'Sep 11, 2026', '4 min read',
+    'Monislex syrup — kindling appetite and smoothing digestion naturally.',
+    [
+      'Lost appetite and slow digestion drain energy and nutrition, especially in children and recovering elders. Monislex Syrup combines traditional digestive herbs that gently kindle agni, helping food break down comfortably while naturally restoring a healthy appetite.',
+      'Regular use traditionally improves digestion, boosts appetite, relieves indigestion and strengthens the overall digestive system — so meals nourish instead of burden. The 200ml bottle is easy to keep on the family shelf for daily use.',
+      'Serve after meals with a little lukewarm water, and keep meal timings regular. If appetite loss persists beyond a few weeks, consult a physician.',
+    ],
+    ['Improves digestion naturally', 'Boosts healthy appetite', 'Relieves indigestion', 'Strengthens digestive system'],
+    'Take 10ml twice daily after meals, or as directed. Shake well before use.'
+  ),
+  make(
+    'liver-care-pink-liver-health', 'liver-care-syrup-pink-200ml', 'Liver Care', 'Sep 11, 2026', '4 min read',
+    'Everyday liver care syrup for a healthy liver and smooth digestion.',
+    [
+      'Daily liver care works best as a small habit, not an occasional cure. This 200ml Liver Care Syrup is portioned for everyday family use — a simple spoon after meals that supports the liver\u2019s round-the-clock job of filtering, digesting and energising the body.',
+      'Its herbal blend traditionally improves liver function, boosts digestion, detoxifies and cleanses, and relieves common stomach issues like heaviness and flatulence. Gentle enough for regular courses, it fits busy households that want one shared liver tonic.',
+      'Combine with lighter dinners and adequate water for the best effect. Shake well before use and keep the bottle away from direct sunlight.',
+    ],
+    ['Improves liver function', 'Boosts digestion', 'Detoxifies & cleanses', 'Relieves stomach issues'],
+    'Take 10ml twice daily after meals, or as directed. Shake well before use.'
+  ),
 ];
 
 export const getBlog = (slug) => BLOGS.find((b) => b.slug === slug);

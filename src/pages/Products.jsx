@@ -23,7 +23,7 @@ export default function Products() {
 
   return (
     <main>
-      <PageHero eyebrow="The Collection" title={<>Shop Premium <span className="italic text-gold-gradient">Ayurveda</span></>} sub="12 signature formulations — lab-tested, GMP-made, loved by 10,000+ families." image={IMAGES.bowls} />
+      <PageHero eyebrow="The Collection" title={<>Shop Premium <span className="italic text-gold-gradient">Ayurveda</span></>} sub="23 signature formulations — lab-tested, GMP-made, loved by 10,000+ families." image={IMAGES.bowls} />
 
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-14">
         <Reveal>
@@ -32,14 +32,14 @@ export default function Products() {
               <Search size={18} className="text-emerald-deep shrink-0" />
               <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search Ashwagandha, oil, immunity..." className="bg-transparent outline-none text-sm w-full placeholder:text-ink/40" />
             </label>
-            <div className="flex items-center gap-2 overflow-x-auto pb-1">
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 -mx-1 px-1">
               {['All', ...CATEGORIES.map((c) => c.name)].map((c) => (
-                <button key={c} onClick={() => setCat(c)} className={`touch-target whitespace-nowrap text-[13px] font-semibold px-4 py-2.5 rounded-full border transition-all ${cat === c ? 'bg-emerald-deep text-ivory border-emerald-deep shadow' : 'border-emerald-deep/20 text-emerald-deep hover:border-emerald-deep'}`}>{c}</button>
+                <button key={c} onClick={() => setCat(c)} className={`touch-target shrink-0 whitespace-nowrap text-[13px] font-semibold px-4 py-2.5 rounded-full border transition-all ${cat === c ? 'bg-emerald-deep text-ivory border-emerald-deep shadow' : 'border-emerald-deep/20 text-emerald-deep hover:border-emerald-deep'}`}>{c}</button>
               ))}
             </div>
-            <label className="flex items-center gap-2 text-sm font-semibold text-emerald-deep shrink-0">
-              <SlidersHorizontal size={16} />
-              <select value={sort} onChange={(e) => setSort(e.target.value)} className="touch-target bg-white border border-emerald-deep/15 rounded-xl px-3 py-2.5 outline-none text-[13px]">
+            <label className="flex items-center gap-2 text-sm font-semibold text-emerald-deep shrink-0 w-full lg:w-auto">
+              <SlidersHorizontal size={16} className="shrink-0" />
+              <select value={sort} onChange={(e) => setSort(e.target.value)} className="touch-target flex-1 lg:flex-none bg-white border border-emerald-deep/15 rounded-xl px-3 py-2.5 outline-none text-[13px]">
                 <option value="popular">Most Popular</option>
                 <option value="rating">Top Rated</option>
                 <option value="low">Price: Low → High</option>

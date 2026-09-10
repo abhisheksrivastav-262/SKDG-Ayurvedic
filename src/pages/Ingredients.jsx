@@ -19,6 +19,14 @@ const INFO = {
   'liver-care-powder': { type: 'Churan', keys: 'Kalmegh, Bhumi Amla, Kutki' },
   'bp-cardio-capsules': { type: 'Capsule', keys: 'Arjuna, Garlic, Ashwagandha' },
   'charcoal-face-wash': { type: 'Face Wash', keys: 'Activated Charcoal, Aloevera, Tea Tree' },
+  'st-care-capsules': { type: 'Capsule', keys: 'Giloy, Tulsi, Ashwagandha, Immunity Herbs' },
+  'bp-cardio-capsules-60': { type: 'Capsule', keys: 'Arjuna, Garlic, Ashwagandha' },
+  'fem-protect-syrup': { type: 'Syrup', keys: 'Ashoka, Lodhra, Shatavari' },
+  'liver-care-syrup-200ml': { type: 'Syrup', keys: 'Kalmegh, Bhumi Amla, Kutki, Punarnava' },
+  'punernava-makoye-tonic': { type: 'Syrup', keys: 'Punernava, Makoye, Kalmegh' },
+  'st-care-syrup': { type: 'Syrup', keys: 'Saunf, Jeera, Ajwain, Digestive Herbs' },
+  'monislex-syrup': { type: 'Syrup', keys: 'Amla, Pippali, Ginger, Digestive Herbs' },
+  'liver-care-syrup-pink-200ml': { type: 'Syrup', keys: 'Kalmegh, Bhumi Amla, Kutki' },
 };
 
 const ORDER = Object.keys(INFO);

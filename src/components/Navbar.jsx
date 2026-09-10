@@ -16,33 +16,26 @@ const LINKS = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
     window.scrollTo({ top: 0 });
   }, [pathname]);
 
-  const solid = scrolled || open;
+  // Header is always pinned + solid so it never scrolls away or turns invisible
+  const solid = true;
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${solid ? 'glass shadow-[0_10px_40px_-15px_rgba(6,78,59,0.35)] border-b border-emerald-deep/10' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
-            <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-[60px] md:h-[70px] lg:h-[80px] w-auto object-contain drop-shadow-[0_4px_14px_rgba(6,78,59,0.35)] group-hover:scale-105 transition-transform" />
-            <span className="leading-tight">
-              <span className={`block font-display text-xl font-semibold tracking-wide ${solid ? 'text-emerald-ink' : 'text-ivory'}`}>SKDG <span className="text-gold-gradient">Ayurvedic</span></span>
-              <span className={`block text-[10px] tracking-[0.32em] uppercase ${solid ? 'text-emerald-deep/70' : 'text-ivory/70'}`}>Ancient • Modern • Pure</span>
+    <nav className="fixed top-0 inset-x-0 z-50 glass shadow-[0_10px_40px_-15px_rgba(6,78,59,0.35)] border-b border-emerald-deep/10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="flex items-center justify-between h-[72px] md:h-20 lg:h-24">
+          <Link to="/" className="flex items-center gap-2 group min-w-0">
+            <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-10 md:h-[70px] lg:h-[80px] w-auto object-contain flex-shrink-0 drop-shadow-[0_4px_14px_rgba(6,78,59,0.35)] group-hover:scale-105 transition-transform" />
+            <span className="leading-tight min-w-0">
+              <span className={`block font-display text-[17px] md:text-xl font-semibold tracking-wide whitespace-nowrap ${solid ? 'text-emerald-ink' : 'text-ivory'}`}>SKDG <span className="text-gold-gradient">Ayurvedic</span></span>
+              <span className={`block text-[9px] md:text-[10px] tracking-[0.18em] md:tracking-[0.32em] uppercase whitespace-nowrap ${solid ? 'text-emerald-deep/70' : 'text-ivory/70'}`}>Ancient • Modern • Pure</span>
             </span>
           </Link>
 
@@ -75,7 +68,7 @@ export default function Navbar() {
           </div>
 
           <button onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}
-            className={`lg:hidden touch-target p-2.5 grid place-items-center rounded-xl border ${solid ? 'border-emerald-deep/20 text-emerald-ink' : 'border-white/25 text-ivory'}`}>
+            className={`lg:hidden touch-target h-12 w-12 grid place-items-center rounded-xl border flex-shrink-0 ${solid ? 'border-emerald-deep/20 text-emerald-ink' : 'border-white/25 text-ivory'}`}>
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>

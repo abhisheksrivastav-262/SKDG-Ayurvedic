@@ -7,7 +7,7 @@ import logoImg from '../assets/logo.png';
 export function Loader() {
   const [show, setShow] = useState(true);
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 1400);
+    const t = setTimeout(() => setShow(false), 600);
     return () => clearTimeout(t);
   }, []);
   return (
