@@ -27,7 +27,7 @@ export default function Products() {
 
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-14">
         <Reveal>
-          <div className="glass border border-emerald-deep/10 rounded-3xl p-4 md:p-5 shadow-lg flex flex-col lg:flex-row gap-3 lg:items-center sticky top-[80px] z-30">
+          <div className="glass border border-emerald-deep/10 rounded-3xl p-4 md:p-5 shadow-lg flex flex-col lg:flex-row gap-3 lg:items-center sticky top-20 lg:top-24 z-30">
             <label className="flex items-center gap-2.5 bg-white border border-emerald-deep/15 rounded-2xl px-4 py-3 flex-1">
               <Search size={18} className="text-emerald-deep shrink-0" />
               <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search Ashwagandha, oil, immunity..." className="bg-transparent outline-none text-sm w-full placeholder:text-ink/40" />

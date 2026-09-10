@@ -32,7 +32,7 @@ export default function ProductDetail() {
   ];
 
   return (
-    <main className="pt-[72px]">
+    <main className="pt-20 lg:pt-24">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-10">
         <Link to="/products" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-deep hover:gap-3 transition-all"><ArrowLeft size={16} /> Back to all products</Link>
 

@@ -20,7 +20,7 @@ export function Loader() {
               alt="SKDG Ayurvedic logo"
               animate={{ scale: [0.95, 1.05, 0.95] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-              className="mx-auto h-[70px] md:h-[90px] w-auto object-contain drop-shadow-[0_0_40px_rgba(200,164,77,0.5)]"
+              className="mx-auto h-[85px] md:h-[100px] lg:h-[120px] w-auto object-contain drop-shadow-[0_0_40px_rgba(200,164,77,0.5)]"
             />
             <p className="font-display text-2xl md:text-3xl text-ivory mt-5">SKDG <span className="text-gold-gradient">Ayurvedic</span></p>
             <p className="text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-ivory/50 mt-1.5">Ancient • Modern • Pure</p>

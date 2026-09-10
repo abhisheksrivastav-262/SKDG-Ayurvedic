@@ -37,9 +37,9 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${solid ? 'glass shadow-[0_10px_40px_-15px_rgba(6,78,59,0.35)] border-b border-emerald-deep/10' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
-            <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-12 md:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_4px_14px_rgba(6,78,59,0.35)] group-hover:scale-105 transition-transform" />
+            <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-[60px] md:h-[70px] lg:h-[80px] w-auto object-contain drop-shadow-[0_4px_14px_rgba(6,78,59,0.35)] group-hover:scale-105 transition-transform" />
             <span className="leading-tight">
               <span className={`block font-display text-xl font-semibold tracking-wide ${solid ? 'text-emerald-ink' : 'text-ivory'}`}>SKDG <span className="text-gold-gradient">Ayurvedic</span></span>
               <span className={`block text-[10px] tracking-[0.32em] uppercase ${solid ? 'text-emerald-deep/70' : 'text-ivory/70'}`}>Ancient • Modern • Pure</span>

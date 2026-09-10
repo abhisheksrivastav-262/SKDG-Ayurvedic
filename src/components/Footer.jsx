@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-14 md:h-[72px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(200,164,77,0.3)]" />
+              <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-[70px] md:h-[80px] lg:h-[90px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(200,164,77,0.3)]" />
               <div>
                 <p className="font-display text-2xl">SKDG <span className="text-gold-gradient">Ayurvedic</span></p>
                 <p className="text-[10px] tracking-[0.32em] uppercase text-ivory/60">Ancient • Modern • Pure</p>
