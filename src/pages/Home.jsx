@@ -5,10 +5,10 @@ import {
   MessageCircle, ShoppingBag, Leaf, FlaskConical, BadgeCheck, Sparkles, HeartHandshake,
   ChevronLeft, ChevronRight, ArrowRight, Award, Microscope, Sprout, PackageCheck, Truck, Star,
 } from 'lucide-react';
-import { InstagramIcon } from '../components/icons';
+import { InstagramIcon, FacebookIcon } from '../components/icons';
 import { Reveal, SectionHeading, Stars } from '../components/ui';
 import ProductCard from '../components/ProductCard';
-import { IMAGES, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL, INSTAGRAM } from '../data/site';
+import { IMAGES, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL, INSTAGRAM, FACEBOOK_URL, EMAIL } from '../data/site';
 import { PRODUCTS, getProduct } from '../data/products';
 import { TESTIMONIALS } from '../data/content';
 
@@ -322,7 +322,11 @@ export default function Home() {
             ))}
           </div>
           <Reveal className="text-center mt-8">
-            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="btn-shine inline-flex items-center gap-2 bg-gradient-to-r from-emerald-deep to-emerald-dark text-ivory font-bold px-8 py-3.5 rounded-full shadow-lg hover:-translate-y-0.5 transition-all"><InstagramIcon size={18} /> Follow @skdg_ayurvedic_</a>
+            <div className="flex flex-wrap justify-center gap-3">
+              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="btn-shine inline-flex items-center gap-2 bg-gradient-to-r from-emerald-deep to-emerald-dark text-ivory font-bold px-8 py-3.5 rounded-full shadow-lg hover:-translate-y-0.5 transition-all"><InstagramIcon size={18} /> Follow @skdg_ayurvedic_</a>
+              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border-2 border-emerald-deep/20 text-emerald-deep font-bold px-8 py-3.5 rounded-full hover:bg-emerald-deep hover:text-ivory transition-all"><FacebookIcon size={18} /> Follow on Facebook</a>
+            </div>
+            <a href={`mailto:${EMAIL}`} className="inline-block mt-4 text-sm text-emerald-deep/70 hover:text-emerald-deep hover:underline">{EMAIL}</a>
           </Reveal>
         </div>
       </section>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle, Phone } from 'lucide-react';
-import { InstagramIcon } from './icons';
-import { PHONE, waLink, DEFAULT_WA_MSG } from '../data/site';
+import { InstagramIcon, FacebookIcon } from './icons';
+import { PHONE, waLink, DEFAULT_WA_MSG, FACEBOOK_URL } from '../data/site';
 import logoImg from '../assets/logo.png';
 
 const LINKS = [
@@ -34,8 +34,11 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2 group min-w-0">
             <img src={logoImg} alt="SKDG Ayurvedic logo" className="h-10 md:h-[70px] lg:h-[80px] w-auto object-contain flex-shrink-0 drop-shadow-[0_4px_14px_rgba(6,78,59,0.35)] group-hover:scale-105 transition-transform" />
             <span className="leading-tight min-w-0">
-              <span className={`block font-display text-[17px] md:text-xl font-semibold tracking-wide whitespace-nowrap ${solid ? 'text-emerald-ink' : 'text-ivory'}`}>SKDG <span className="text-gold-gradient">Ayurvedic</span></span>
-              <span className={`block text-[9px] md:text-[10px] tracking-[0.18em] md:tracking-[0.32em] uppercase whitespace-nowrap ${solid ? 'text-emerald-deep/70' : 'text-ivory/70'}`}>Ancient • Modern • Pure</span>
+              <span className={`block font-display text-[19px] md:text-[26px] font-bold tracking-tight whitespace-nowrap ${solid ? 'text-emerald-ink' : 'text-ivory'}`}>SKDG <span className="italic font-bold" style={{ background: 'linear-gradient(115deg, #6e561c 0%, #9a7a2e 40%, #b8913f 60%, #6e561c 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>Ayurvedic</span></span>
+              <span className="flex items-center gap-1.5 mt-0.5">
+                <span className="h-[2px] w-5 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light shrink-0" />
+                <span className={`block text-[9px] md:text-[10.5px] font-semibold tracking-[0.22em] md:tracking-[0.3em] uppercase whitespace-nowrap ${solid ? 'text-emerald-deep' : 'text-ivory/80'}`}>Ancient <span className="text-gold-dark md:text-gold">•</span> Modern <span className="text-gold-dark md:text-gold">•</span> Pure</span>
+              </span>
             </span>
           </Link>
 
@@ -88,6 +91,9 @@ export default function Navbar() {
             </a>
             <a href="https://instagram.com/skdg_ayurvedic_" target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 border border-emerald-deep/20 text-emerald-ink font-semibold px-4 py-3 rounded-xl">
               <InstagramIcon size={16} />
+            </a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" aria-label="Facebook" className="inline-flex justify-center items-center gap-2 border border-emerald-deep/20 text-emerald-ink font-semibold px-4 py-3 rounded-xl">
+              <FacebookIcon size={16} />
             </a>
           </div>
         </div>

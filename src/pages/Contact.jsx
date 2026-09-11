@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
-import { InstagramIcon } from '../components/icons';
+import { Phone, MapPin, Clock, Send, MessageCircle, Mail } from 'lucide-react';
+import { InstagramIcon, FacebookIcon } from '../components/icons';
 import { Reveal, SectionHeading, PageHero } from '../components/ui';
-import { IMAGES, PHONE, INSTAGRAM, INSTAGRAM_URL, waLink } from '../data/site';
+import { IMAGES, PHONE, INSTAGRAM, INSTAGRAM_URL, FACEBOOK_URL, EMAIL, waLink } from '../data/site';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
@@ -34,6 +34,14 @@ export default function Contact() {
                 <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="flex gap-4 items-start group">
                   <span className="w-12 h-12 grid place-items-center rounded-2xl bg-white/10 border border-white/15 text-gold-light shrink-0"><InstagramIcon size={20} /></span>
                   <span><b className="text-ivory block">Instagram</b><span className="text-gold-light group-hover:underline">{INSTAGRAM}</span></span>
+                </a>
+                <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="flex gap-4 items-start group">
+                  <span className="w-12 h-12 grid place-items-center rounded-2xl bg-white/10 border border-white/15 text-gold-light shrink-0"><FacebookIcon size={20} /></span>
+                  <span><b className="text-ivory block">Facebook</b><span className="text-gold-light group-hover:underline">Follow us on Facebook</span></span>
+                </a>
+                <a href={`mailto:${EMAIL}`} className="flex gap-4 items-start group">
+                  <span className="w-12 h-12 grid place-items-center rounded-2xl bg-white/10 border border-white/15 text-gold-light shrink-0"><Mail size={20} /></span>
+                  <span><b className="text-ivory block">Email</b><span className="text-gold-light group-hover:underline break-all">{EMAIL}</span></span>
                 </a>
                 <div className="flex gap-4 items-start">
                   <span className="w-12 h-12 grid place-items-center rounded-2xl bg-white/10 border border-white/15 text-gold-light shrink-0"><MapPin size={20} /></span>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, Phone, MapPin, Clock, Leaf, ArrowUpRight } from 'lucide-react';
-import { InstagramIcon } from './icons';
-import { PHONE, INSTAGRAM, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL } from '../data/site';
+import { MessageCircle, Phone, MapPin, Clock, Leaf, ArrowUpRight, Mail } from 'lucide-react';
+import { InstagramIcon, FacebookIcon } from './icons';
+import { PHONE, INSTAGRAM, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL, FACEBOOK_URL, EMAIL } from '../data/site';
 import { PRODUCTS } from '../data/products';
 import logoImg from '../assets/logo.png';
 
@@ -25,6 +25,12 @@ export default function Footer() {
             <div className="flex gap-2.5 mt-5">
               <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram" className="touch-target w-11 h-11 grid place-items-center rounded-full bg-white/8 border border-white/15 hover:bg-gold hover:text-emerald-ink hover:border-gold transition-all">
                 <InstagramIcon size={17} />
+              </a>
+              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" aria-label="Facebook" className="touch-target w-11 h-11 grid place-items-center rounded-full bg-white/8 border border-white/15 hover:bg-gold hover:text-emerald-ink hover:border-gold transition-all">
+                <FacebookIcon size={17} />
+              </a>
+              <a href={`mailto:${EMAIL}`} aria-label="Email" className="touch-target w-11 h-11 grid place-items-center rounded-full bg-white/8 border border-white/15 hover:bg-gold hover:text-emerald-ink hover:border-gold transition-all">
+                <Mail size={17} />
               </a>
               <a href={waLink(DEFAULT_WA_MSG)} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="touch-target w-11 h-11 grid place-items-center rounded-full bg-white/8 border border-white/15 hover:bg-gold hover:text-emerald-ink hover:border-gold transition-all">
                 <MessageCircle size={17} />
@@ -62,6 +68,8 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-ivory/70">
               <li className="flex gap-2.5"><Phone size={16} className="text-gold shrink-0 mt-0.5" /><a href={`tel:${PHONE.replace(/\s/g, '')}`} className="hover:text-gold-light">{PHONE}</a></li>
               <li className="flex gap-2.5"><span className="text-gold shrink-0 mt-0.5 inline-flex"><InstagramIcon size={16} /></span><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-gold-light">{INSTAGRAM}</a></li>
+              <li className="flex gap-2.5"><span className="text-gold shrink-0 mt-0.5 inline-flex"><FacebookIcon size={16} /></span><a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:text-gold-light">Follow us on Facebook</a></li>
+              <li className="flex gap-2.5"><Mail size={16} className="text-gold shrink-0 mt-0.5" /><a href={`mailto:${EMAIL}`} className="hover:text-gold-light break-all">{EMAIL}</a></li>
               <li className="flex gap-2.5"><MapPin size={16} className="text-gold shrink-0 mt-0.5" />Punjab, India — shipping across India</li>
               <li className="flex gap-2.5"><Clock size={16} className="text-gold shrink-0 mt-0.5" />Mon–Sat, 9 AM – 8 PM IST</li>
             </ul>

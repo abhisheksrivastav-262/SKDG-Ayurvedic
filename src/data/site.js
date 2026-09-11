@@ -2,6 +2,8 @@ export const PHONE = '+91 95922 44442';
 export const PHONE_LINK = '919592244442';
 export const INSTAGRAM = '@skdg_ayurvedic_';
 export const INSTAGRAM_URL = 'https://instagram.com/skdg_ayurvedic_';
+export const FACEBOOK_URL = 'https://www.facebook.com/share/1DfKacSwgu/';
+export const EMAIL = 'Skdgayurvedic22@gmail.com';
 
 export const waLink = (message) =>
   `https://wa.me/${PHONE_LINK}?text=${encodeURIComponent(message)}`;
