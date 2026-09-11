@@ -1,5 +1,5 @@
-export const PHONE = '+91 89685 18005';
-export const PHONE_LINK = '918968518005';
+export const PHONE = '+91 95922 44442';
+export const PHONE_LINK = '919592244442';
 export const INSTAGRAM = '@skdg_ayurvedic_';
 export const INSTAGRAM_URL = 'https://instagram.com/skdg_ayurvedic_';
 
@@ -19,6 +19,7 @@ const img = (id, w = 900) =>
 
 export const IMAGES = {
   hero: img('photo-1512069772995-ec65ed45afd6', 1800),
+  heroLux: img('photo-1515377905703-c4788e51af15', 1920),
   heroAlt: img('photo-1471193945509-9ad0617afabf', 1800),
   bowls: img('photo-1515023115689-589c33041d3c', 1200),
   mortar: img('photo-1471864190281-a93a3070b6de', 1200),

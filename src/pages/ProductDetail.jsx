@@ -3,8 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { MessageCircle, Phone, Check, ChevronDown, ShieldCheck, Truck, RotateCcw, ArrowLeft } from 'lucide-react';
 import { Reveal, SectionHeading, Stars } from '../components/ui';
 import ProductCard from '../components/ProductCard';
+import OrderModal from '../components/OrderModal';
 import { getProduct, relatedProducts } from '../data/products';
-import { PHONE, orderLink, waLink } from '../data/site';
+import { PHONE, waLink } from '../data/site';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -12,6 +13,7 @@ export default function ProductDetail() {
   const [activeImg, setActiveImg] = useState(0);
   const [qty, setQty] = useState(1);
   const [openFaq, setOpenFaq] = useState(0);
+  const [ordering, setOrdering] = useState(false);
 
   if (!product) {
     return (
@@ -76,10 +78,11 @@ export default function ProductDetail() {
                 <span className="px-2 font-bold w-8 text-center">{qty}</span>
                 <button onClick={() => setQty(qty + 1)} className="px-4 py-2.5 font-bold text-emerald-deep hover:bg-emerald-deep/10" aria-label="Increase">+</button>
               </div>
-              <a href={orderLink(`${product.name} x ${qty}`, product.price * qty)} target="_blank" rel="noreferrer" className="btn-shine flex-1 inline-flex justify-center items-center gap-2 bg-gradient-to-r from-emerald-deep to-emerald-dark text-ivory font-bold px-6 py-3.5 rounded-full shadow-lg hover:-translate-y-0.5 transition-all">
+              <button onClick={() => setOrdering(true)} className="btn-shine flex-1 inline-flex justify-center items-center gap-2 bg-gradient-to-r from-emerald-deep to-emerald-dark text-ivory font-bold px-6 py-3.5 rounded-full shadow-lg hover:-translate-y-0.5 transition-all">
                 <MessageCircle size={18} /> Order on WhatsApp
-              </a>
+              </button>
             </div>
+            {ordering && <OrderModal product={product} initialQty={qty} onClose={() => setOrdering(false)} />}
             <a href={`tel:${PHONE.replace(/\s/g, '')}`} className="mt-3 w-full inline-flex justify-center items-center gap-2 border-2 border-gold text-gold-dark font-bold px-6 py-3.5 rounded-full hover:bg-gold hover:text-emerald-ink hover:border-gold transition-all">
               <Phone size={17} /> Call {PHONE}
             </a>

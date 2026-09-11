@@ -51,9 +51,9 @@ const HIGHLIGHTS = [
 function Hero() {
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-emerald-ink">
-      <img src={IMAGES.hero} alt="Luxury Ayurvedic herbs" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-ink/95 via-emerald-ink/70 to-emerald-dark/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink via-transparent to-emerald-ink/40" />
+      <img src={IMAGES.heroLux} alt="Luxury Ayurvedic spa ritual with herbs and oils" className="absolute inset-0 h-full w-full object-cover object-center scale-105 blur-[1.5px]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-ink/60 via-emerald-ink/50 to-emerald-dark/45" />
+      <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/60 via-transparent to-emerald-ink/45" />
       <div className="hero-grain absolute inset-0" />
       {[...Array(7)].map((_, i) => (
         <span key={i} className="animate-leaf absolute text-emerald-200/40" style={{ left: `${8 + i * 13}%`, top: `${15 + ((i * 23) % 60)}%`, animationDelay: `${i * 0.9}s`, fontSize: `${18 + (i % 3) * 10}px` }}>🍃</span>

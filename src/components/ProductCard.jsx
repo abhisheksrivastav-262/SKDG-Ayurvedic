@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MessageCircle, Eye, BadgeCheck } from 'lucide-react';
 import { Stars } from './ui';
-import { orderLink } from '../data/site';
+import OrderModal from './OrderModal';
 
 export default function ProductCard({ product, index = 0 }) {
+  const [ordering, setOrdering] = useState(false);
   const discount = Math.round((1 - product.price / product.mrp) * 100);
   return (
     <motion.article
@@ -44,11 +46,12 @@ export default function ProductCard({ product, index = 0 }) {
           <Link to={`/products/${product.id}`} className="touch-target inline-flex justify-center items-center gap-1.5 border-2 border-emerald-deep/20 text-emerald-deep text-sm font-semibold px-3 py-2.5 rounded-2xl hover:border-emerald-deep hover:bg-emerald-deep/5 transition-all">
             <Eye size={15} /> Details
           </Link>
-          <a href={orderLink(product.name, product.price)} target="_blank" rel="noreferrer" className="btn-shine touch-target inline-flex justify-center items-center gap-1.5 bg-gradient-to-r from-emerald-deep to-emerald-dark text-ivory text-sm font-semibold px-3 py-2.5 rounded-2xl shadow-md hover:shadow-lg transition-all">
+          <button onClick={() => setOrdering(true)} className="btn-shine touch-target inline-flex justify-center items-center gap-1.5 bg-gradient-to-r from-emerald-deep to-emerald-dark text-ivory text-sm font-semibold px-3 py-2.5 rounded-2xl shadow-md hover:shadow-lg transition-all">
             <MessageCircle size={15} /> Order
-          </a>
+          </button>
         </div>
       </div>
+      {ordering && <OrderModal product={product} onClose={() => setOrdering(false)} />}
     </motion.article>
   );
 }

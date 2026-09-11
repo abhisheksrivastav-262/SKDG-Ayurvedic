@@ -11,7 +11,7 @@ export default function Contact() {
   const submit = (e) => {
     e.preventDefault();
     const msg = `Hello SKDG Ayurvedic,%0A%0A*New Enquiry from Website*%0AName: ${encodeURIComponent(form.name)}%0APhone: ${encodeURIComponent(form.phone)}%0AEmail: ${encodeURIComponent(form.email)}%0AMessage: ${encodeURIComponent(form.message)}`;
-    window.open(`https://wa.me/918968518005?text=${msg}`, '_blank');
+    window.open(`https://wa.me/919592244442?text=${msg}`, '_blank');
   };
 
   const input = 'w-full bg-ivory border border-emerald-deep/15 rounded-2xl px-5 py-3.5 text-sm outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition-all placeholder:text-ink/35';

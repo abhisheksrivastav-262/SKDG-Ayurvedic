@@ -46,7 +46,7 @@ export const GALLERY = [
 
 export const FAQS = [
   { q: 'Are SKDG Ayurvedic products 100% authentic & natural?', a: 'Yes. Every formulation uses traceable, farm-sourced herbs, is manufactured in GMP-certified facilities, batch-tested for heavy metals and microbes, and contains no steroids, chemicals or artificial additives.' },
-  { q: 'How do I order on WhatsApp?', a: 'Tap any "WhatsApp Order" button or message +91 89685 18005. Share the product name and your address — our team confirms availability, price and delivery within minutes during business hours.' },
+  { q: 'How do I order on WhatsApp?', a: 'Tap any "WhatsApp Order" button or message +91 95922 44442. Share the product name and your address — our team confirms availability, price and delivery within minutes during business hours.' },
   { q: 'How long before I see results?', a: 'Ayurveda works at the root. Most customers feel digestion, sleep or energy shifts in 2–3 weeks, with deeper results over 8–12 weeks of consistent use alongside diet and routine.' },
   { q: 'Are there any side effects?', a: 'Our products use classical, food-grade herbs at safe doses and are generally well tolerated. Pregnant/lactating women and those on medication should consult a doctor or our wellness team first.' },
   { q: 'What is the shipping time & cost?', a: 'Orders dispatch within 24–48 hours across India and arrive in 3–6 working days. Shipping is free above ₹499; COD is available in most pincodes.' },

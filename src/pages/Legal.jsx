@@ -23,13 +23,13 @@ export function Privacy() {
         <h2 className="font-display text-2xl text-emerald-ink">2. How We Use It</h2>
         <p>Your details are used for order processing, delivery coordination, customer support and (only with consent) occasional product updates. We never sell, rent or share your data with third-party marketers.</p>
         <h2 className="font-display text-2xl text-emerald-ink">3. WhatsApp & Instagram</h2>
-        <p>Conversations on WhatsApp (+91 89685 18005) and Instagram (@skdg_ayurvedic_) are governed additionally by those platforms' privacy policies.</p>
+        <p>Conversations on WhatsApp (+91 95922 44442) and Instagram (@skdg_ayurvedic_) are governed additionally by those platforms' privacy policies.</p>
         <h2 className="font-display text-2xl text-emerald-ink">4. Data Security</h2>
         <p>Order and enquiry records are stored securely with access limited to the SKDG fulfilment team. You may request correction or deletion anytime via WhatsApp.</p>
         <h2 className="font-display text-2xl text-emerald-ink">5. Cookies</h2>
         <p>This website uses only essential technical storage for a smooth browsing experience — no advertising trackers.</p>
         <h2 className="font-display text-2xl text-emerald-ink">6. Contact</h2>
-        <p>Questions? Message us on WhatsApp at +91 89685 18005 or Instagram @skdg_ayurvedic_.</p>
+        <p>Questions? Message us on WhatsApp at +91 95922 44442 or Instagram @skdg_ayurvedic_.</p>
       </Doc>
     </main>
   );
@@ -43,7 +43,7 @@ export function Terms() {
         <h2 className="font-display text-2xl text-emerald-ink">1. Products & Wellness Disclaimer</h2>
         <p>SKDG Ayurvedic products are traditional wellness formulations, not substitutes for medical diagnosis or treatment. Results vary by individual; consistent use with diet and lifestyle is recommended. Consult a doctor if pregnant, lactating, or on medication.</p>
         <h2 className="font-display text-2xl text-emerald-ink">2. Ordering via WhatsApp</h2>
-        <p>Orders placed on WhatsApp (+91 89685 18005) are confirmed with price, shipping and delivery timeline before dispatch. COD is available in most pincodes.</p>
+        <p>Orders placed on WhatsApp (+91 95922 44442) are confirmed with price, shipping and delivery timeline before dispatch. COD is available in most pincodes.</p>
         <h2 className="font-display text-2xl text-emerald-ink">3. Pricing & Payments</h2>
         <p>All prices are in INR, inclusive of taxes unless stated. Shipping is free above ₹499. UPI, bank transfer and COD accepted as confirmed on chat.</p>
         <h2 className="font-display text-2xl text-emerald-ink">4. Shipping & Returns</h2>

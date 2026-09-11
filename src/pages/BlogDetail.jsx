@@ -1,14 +1,17 @@
 import { Link, useParams } from 'react-router-dom';
+import { useState } from 'react';
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, Check, MessageCircle, ShoppingBag } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Reveal, Stars } from '../components/ui';
+import OrderModal from '../components/OrderModal';
 import { getBlog, BLOGS } from '../data/blogs';
 import { getProduct } from '../data/products';
-import { orderLink, waLink } from '../data/site';
+import { waLink } from '../data/site';
 
 export default function BlogDetail() {
   const { slug } = useParams();
   const blog = getBlog(slug);
+  const [ordering, setOrdering] = useState(false);
 
   if (!blog) {
     return (
@@ -75,13 +78,14 @@ export default function BlogDetail() {
                 <h3 className="font-display text-2xl text-ivory mt-1">{product.name} — ₹{product.price}</h3>
                 <div className="flex items-center justify-center sm:justify-start gap-2 mt-1.5"><Stars value={product.rating} size={13} /><span className="text-ivory/60 text-xs">{product.rating} · {product.reviews.toLocaleString('en-IN')} reviews</span></div>
                 <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 mt-4">
-                  <a href={orderLink(product.name, product.price)} target="_blank" rel="noreferrer" className="btn-shine inline-flex items-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-emerald-ink text-sm font-bold px-6 py-3 rounded-full"><MessageCircle size={15} /> Order Now</a>
+                  <button onClick={() => setOrdering(true)} className="btn-shine inline-flex items-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-emerald-ink text-sm font-bold px-6 py-3 rounded-full"><MessageCircle size={15} /> Order Now</button>
                   <Link to={`/products/${product.id}`} className="inline-flex items-center gap-2 border border-ivory/30 text-ivory text-sm font-semibold px-6 py-3 rounded-full hover:bg-white/10"><ShoppingBag size={15} /> Details</Link>
                 </div>
               </div>
             </div>
           </Reveal>
         )}
+        {product && ordering && <OrderModal product={product} onClose={() => setOrdering(false)} />}
 
         <Reveal className="text-center mt-10">
           <p className="text-sm text-ink/55">Questions about this product? <a href={waLink(`Hello SKDG Ayurvedic, I read your article on ${blog.title} and have a question.`)} target="_blank" rel="noreferrer" className="font-bold text-emerald-deep underline underline-offset-4">Ask our experts free →</a></p>
