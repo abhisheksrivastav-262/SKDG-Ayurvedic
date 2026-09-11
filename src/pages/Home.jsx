@@ -9,7 +9,7 @@ import { InstagramIcon } from '../components/icons';
 import { Reveal, SectionHeading, Stars } from '../components/ui';
 import ProductCard from '../components/ProductCard';
 import { IMAGES, waLink, DEFAULT_WA_MSG, INSTAGRAM_URL, INSTAGRAM } from '../data/site';
-import { PRODUCTS } from '../data/products';
+import { PRODUCTS, getProduct } from '../data/products';
 import { TESTIMONIALS } from '../data/content';
 
 const TRUST = [
@@ -48,69 +48,111 @@ const HIGHLIGHTS = [
   { id: 'ortho-ds-capsules', desc: 'Herbal joint and bone wellness support.' },
 ];
 
+const HERO_TRUST = [
+  { icon: Leaf, label: '100% Natural' },
+  { icon: BadgeCheck, label: 'GMP Quality' },
+  { icon: FlaskConical, label: 'Chemical Free' },
+  { icon: HeartHandshake, label: 'Trusted by Families' },
+];
+
+const HERO_LEAVES = [8, 24, 40, 56, 72, 88];
+
 function Hero() {
+  const gulkand = getProduct('skdg-gulkand-250g');
+  const haldi = getProduct('pancham-haldi');
+  const neem = getProduct('neem-aloevera-face-wash');
+  const [par, setPar] = useState({ x: 0, y: 0 });
+  const onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    setPar({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 });
+  };
+  const layer = (d) => ({ transform: `translate3d(${(par.x * d).toFixed(1)}px, ${(par.y * d).toFixed(1)}px, 0)` });
+
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-emerald-ink">
-      <img src={IMAGES.heroLux} alt="Luxury Ayurvedic spa ritual with herbs and oils" className="absolute inset-0 h-full w-full object-cover object-center scale-105 blur-[1.5px]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-ink/60 via-emerald-ink/50 to-emerald-dark/45" />
-      <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/60 via-transparent to-emerald-ink/45" />
+    <section onMouseMove={onMove} className="relative min-h-[90svh] lg:min-h-[100svh] flex items-center overflow-hidden bg-emerald-ink">
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-ink via-emerald-dark to-emerald-ink" />
+      <div className="absolute -top-48 -right-48 h-[560px] w-[560px] rounded-full bg-gold/15 blur-[130px]" />
+      <div className="absolute top-1/3 -left-40 h-[480px] w-[480px] rounded-full bg-emerald-deep/40 blur-[120px]" />
+      <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'linear-gradient(115deg, transparent 40%, rgba(200,164,77,0.12) 45%, transparent 55%, transparent 62%, rgba(200,164,77,0.08) 67%, transparent 72%)' }} />
       <div className="hero-grain absolute inset-0" />
-      {[...Array(7)].map((_, i) => (
-        <span key={i} className="animate-leaf absolute text-emerald-200/40" style={{ left: `${8 + i * 13}%`, top: `${15 + ((i * 23) % 60)}%`, animationDelay: `${i * 0.9}s`, fontSize: `${18 + (i % 3) * 10}px` }}>🍃</span>
+      <div className="absolute -right-32 top-1/4 h-96 w-96 rounded-full border border-gold/15" />
+      <div className="absolute -right-20 top-1/4 mt-12 h-72 w-72 rounded-full border border-gold/10" />
+      {HERO_LEAVES.map((left, i) => (
+        <span key={i} className="animate-leaf absolute text-emerald-200/30" style={{ left: `${left}%`, top: `${12 + ((i * 29) % 62)}%`, animationDelay: `${i * 1.1}s` }}>
+          <Leaf size={20 + (i % 3) * 8} />
+        </span>
       ))}
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-32 pb-20 grid lg:grid-cols-2 gap-12 items-center w-full">
+
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-32 pb-24 grid lg:grid-cols-2 gap-12 lg:gap-6 items-center w-full">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-          <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.3em] uppercase text-gold-light border border-gold/40 bg-white/5 px-4 py-2 rounded-full backdrop-blur">
-            <Sparkles size={13} /> Premium Ayurvedic Wellness
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-gold-light border border-gold/40 bg-white/5 px-4 py-2 rounded-full backdrop-blur">
+            🌿 100% Ayurvedic • GMP Certified
           </span>
           <h1 className="fluid-hero font-display text-ivory mt-6">
-            Ancient Ayurveda,<br /><span className="text-gold-gradient italic">Modern Wellness</span>
+            Heal Naturally with the <span className="text-gold-gradient italic">Power of Ayurveda</span>
           </h1>
           <p className="text-ivory/75 text-base md:text-lg leading-relaxed mt-6 max-w-xl">
-            Premium Ayurvedic formulations crafted with nature's finest herbs for holistic health and daily wellness.
+            Experience authentic herbal wellness crafted from nature's finest formulations for immunity, liver care, skincare &amp; everyday health.
           </p>
           <div className="flex flex-wrap gap-3.5 mt-8">
             <Link to="/products" className="btn-shine inline-flex items-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-emerald-ink font-bold px-7 py-3.5 rounded-full shadow-[0_15px_40px_-10px_rgba(200,164,77,0.6)] hover:-translate-y-0.5 transition-all">
-              <ShoppingBag size={18} /> Shop Products
+              <ShoppingBag size={18} /> Explore Products
             </Link>
             <a href={waLink(DEFAULT_WA_MSG)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border border-ivory/30 text-ivory font-semibold px-7 py-3.5 rounded-full glass-dark hover:bg-white/15 transition-all">
-              <MessageCircle size={18} /> WhatsApp Now
+              <MessageCircle size={18} /> Order on WhatsApp
             </a>
           </div>
-          <div className="flex items-center gap-4 mt-9">
-            <div className="flex -space-x-3">
-              {TESTIMONIALS.slice(0, 4).map((t) => (
-                <img key={t.name} src={t.image} alt={t.name} className="w-10 h-10 rounded-full border-2 border-gold object-cover" loading="lazy" />
-              ))}
-            </div>
-            <div>
-              <Stars value={5} />
-              <p className="text-ivory/70 text-xs mt-0.5">Loved by <b className="text-gold-light">10,000+</b> wellness families</p>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-9 max-w-xl">
+            {HERO_TRUST.map((t) => (
+              <div key={t.label} className="flex items-center gap-2">
+                <span className="w-9 h-9 grid place-items-center rounded-xl bg-gold/15 border border-gold/30 text-gold-light shrink-0"><t.icon size={15} /></span>
+                <span className="text-ivory/85 text-[13px] font-semibold leading-tight">{t.label}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.25 }} className="hidden lg:block">
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-[40px] bg-gradient-to-br from-gold/25 to-transparent blur-2xl" />
-            <div className="relative glass-dark border border-gold/30 rounded-[32px] p-4 shadow-2xl">
-              <img src={IMAGES.bowls} alt="Ayurvedic bowls" className="rounded-[24px] h-[420px] w-full object-cover" />
-              <div className="absolute bottom-8 left-8 right-8 glass rounded-2xl p-4 flex items-center gap-4">
-                <span className="w-12 h-12 grid place-items-center rounded-2xl bg-emerald-deep text-gold-light shrink-0"><Leaf size={22} /></span>
-                <div>
-                  <p className="font-display text-lg text-emerald-ink leading-tight">Shilajit Resin — Pure Himalayan</p>
-                  <p className="text-xs text-ink/60">★ 5.0 · 3,204 reviews · <b>₹999</b></p>
-                </div>
-                <Link to="/products/shilajit-resin" className="ml-auto text-xs font-bold bg-emerald-deep text-ivory px-4 py-2.5 rounded-full hover:bg-emerald-dark">View</Link>
+        <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.25 }} className="relative mx-auto w-full max-w-[430px]">
+          <div className="relative h-[430px] sm:h-[500px]">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-80 sm:h-96 sm:w-96 rounded-full bg-white/5 border border-gold/20 backdrop-blur-sm" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-60 w-60 sm:h-72 sm:w-72 rounded-full bg-gold/10 border border-gold/15 blur-[1px]" />
+            {[12, 30, 52, 70, 86].map((left, i) => (
+              <span key={i} className="animate-leaf absolute h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_12px_rgba(200,164,77,0.9)]" style={{ left: `${left}%`, top: `${8 + ((i * 37) % 80)}%`, animationDelay: `${i * 0.7}s` }} />
+            ))}
+            <div className="absolute left-0 top-6 w-36 sm:w-44 -rotate-6" style={layer(28)}>
+              <div className="animate-leaf glass-dark border border-gold/30 rounded-[22px] p-2.5 shadow-2xl" style={{ animationDelay: '0.8s' }}>
+                <img src={haldi.image} alt={haldi.name} className="h-40 sm:h-48 w-full object-contain rounded-xl bg-ivory/95" loading="eager" />
+                <p className="text-center text-ivory text-[11px] font-bold mt-2 truncate">{haldi.name}</p>
+                <p className="text-center text-gold-light text-[11px] font-semibold">₹{haldi.price}</p>
               </div>
             </div>
+            <div className="absolute right-0 bottom-6 w-36 sm:w-44 rotate-6" style={layer(22)}>
+              <div className="animate-leaf glass-dark border border-gold/30 rounded-[22px] p-2.5 shadow-2xl" style={{ animationDelay: '1.6s' }}>
+                <img src={neem.image} alt={neem.name} className="h-40 sm:h-48 w-full object-contain rounded-xl bg-ivory/95" loading="eager" />
+                <p className="text-center text-ivory text-[11px] font-bold mt-2 truncate">{neem.name}</p>
+                <p className="text-center text-gold-light text-[11px] font-semibold">₹{neem.price}</p>
+              </div>
+            </div>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-52 sm:w-60" style={layer(12)}>
+              <div className="animate-leaf glass-dark border border-gold/40 rounded-[26px] p-3 shadow-[0_30px_80px_-20px_rgba(200,164,77,0.45)]">
+                <img src={gulkand.image} alt={gulkand.name} className="h-60 sm:h-72 w-full object-contain rounded-2xl bg-ivory/95" loading="eager" />
+                <p className="text-center text-ivory text-xs font-bold mt-2.5 truncate">{gulkand.name}</p>
+                <p className="text-center text-gold-light text-xs font-semibold">₹{gulkand.price}</p>
+              </div>
+            </div>
+            <span className="animate-leaf absolute left-6 bottom-16 w-11 h-11 grid place-items-center rounded-full glass border border-gold/30 text-emerald-deep" style={{ animationDelay: '0.4s' }}>
+              <Leaf size={17} />
+            </span>
+            <span className="animate-leaf absolute right-8 top-14 w-11 h-11 grid place-items-center rounded-full glass border border-gold/30 text-emerald-deep" style={{ animationDelay: '2s' }}>
+              <Leaf size={17} />
+            </span>
           </div>
         </motion.div>
       </div>
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ivory/50">
-        <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-        <motion.span animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }} className="w-6 h-10 rounded-full border-2 border-ivory/30 flex justify-center pt-2"><span className="w-1 h-2 rounded-full bg-gold" /></motion.span>
-      </div>
+
+      <svg className="absolute bottom-0 left-0 block w-full text-ivory -mb-px" viewBox="0 0 1440 70" fill="currentColor" preserveAspectRatio="none" style={{ height: 56 }}>
+        <path d="M0,40 C240,80 480,0 720,30 C960,60 1200,80 1440,30 L1440,70 L0,70 Z" />
+      </svg>
     </section>
   );
 }
